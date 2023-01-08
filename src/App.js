@@ -1,17 +1,19 @@
 import './App.css';
-import Home from './pages/Home/Home';
 import { Routes, Route } from 'react-router-dom';
-import NotFound from './pages/NotFound/NotFound';
+
+import Home from './pages/Home/Home';
+import NotFound from './pages/Error/NotFound';
+import Navigation from './components/shared/navigation/Navigation';
 
 function App() {
   return (
-    <div className="App">
+    <>
+    <Navigation />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/*' element={<NotFound />} />
       </Routes>
-
-    </div>
+    </>
   );
 }
 
