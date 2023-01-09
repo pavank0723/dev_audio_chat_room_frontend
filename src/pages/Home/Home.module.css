@@ -1,0 +1,68 @@
+.card_wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.card{
+    width: 650px;
+    max-width: 50%;
+    min-height: 450px;
+    background: var(--main-color);
+    margin: auto;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    padding: 100px;
+    box-shadow: 0 -6px 10px 0 rgba(120, 120, 120, 0.2), 0 6px 8px 0 rgba(120, 120, 120, 0.2);
+}
+.heading_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heading{
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.text{
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--grey_lightest-color);
+}
+
+.btn_primary{
+    background-color: var(--utils_blue-color);
+    color: var(--grey_lightest-color);
+    width: 300px;
+    min-width: max-content;
+    padding: 10px 20px;
+    margin-block: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+.btn_primary:hover{
+    background-color: hsl(212, 100%, 33%);
+}
+
+.signing_wrapper{
+    color: var(--utils_blue-color);
+}
+
+.has_invite{
+    color: var(--utils_blue-color);
+    margin-left: 5px;
+}
+.has_invite:hover{
+    color: hsl(212, 100%, 33%);
+}

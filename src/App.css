@@ -5,6 +5,9 @@
 /* === Variables css === */
 
 :root {
+    /* Logo */
+    --logo-size: 10px;
+
     /* === Colors === */
     /* --- Color Mode -> HSL (Hue, Saturation, Lightness) --- */
     --header-height: 3.5rem;
@@ -20,6 +23,25 @@
     --border-color2: rgba(0, 0, 0, 0.15);
     --my-image-color:linear-gradient(to right, #F9D976 , #F39F86);
 
+    --main_lightest-color: hsl(0, 2%, 25%);
+    --main_light-color: hsl(0, 0%, 20%);
+    --main-color: hsl(0, 0%, 15%);
+    --main_dark-color:hsl(0, 0%, 11%);
+    --main_darkest-color:hsl(0, 0%, 7%);
+
+    --grey_lightest-color: hsl(189, 100%, 99%);
+    --grey_light-color: hsl(200, 32%, 93%);
+    --grey_before-grey-color: hsl(180, 1%, 77%);
+    --grey-color: hsl(200, 6%, 50%);
+    --grey_dark-color: hsl(200, 6%, 30%);
+    --grey_darkest-color: hsl(200, 6%, 10%);
+
+    --utils_blue-color:hsl(212, 100%, 50%);
+    --utils_purple-color:hsl(240, 69%, 60%);
+    --utils_red-color:hsl(4, 90%, 58%);
+    --utils_pink-color:hsl(340, 82%, 52%);
+
+    --card-color: var(--main-color)
     /* === Font & Typography === */
     /* --- .5rem = 8px | 1rem = 16px | 2rem = 32px ... --- */
 
@@ -32,6 +54,7 @@
     --small-font-size: 0.875rem;
     --smaller-font-size: 0.813rem;
     --tiny-font-size: 0.625rem;
+    
 
     /* === Font Weight === */
     --font-medium: 500;
@@ -40,6 +63,7 @@
 
     /* === Box Shadow === */
     --shadow: 0px 5px 20px 0px rgba(96, 86, 67, 0.1);
+    --card_shadow-color: rgba(120, 120, 120, 0.2);
 
     /* === Border Radius === */
     --border-radius: 20px;
@@ -91,6 +115,7 @@
     --border-color2: rgba(0, 0, 0, 0.15);
     --border-color3: rgba(0, 0, 0, 0.3);
     --my-image-color:linear-gradient(to right, #F9D976 , #F39F86);
+    --card-color : var(var(--grey_light-color))
 }
 
 .dark-theme{
@@ -100,7 +125,7 @@
     --second-color: #f59638;
     --title-color: #f8f8f8;
     --text-color: #f3f3f3;
-    --body-color: #212121;
+    --body-color: #1D1D1D;
     --box-color: hsl(41, 100%, 89%);
     --container-color: #171717;
     --normal-color: #fff;
@@ -108,6 +133,7 @@
     --border-color2: rgba(255, 255, 255, 0.15);
     --border-color3: rgba(245, 245, 245, 0.3);
     --my-image-color:linear-gradient(to right, #F9D976 , #F39F86);
+    --utils_blue-color:hsl(212, 100%, 50%);
 }
 /* Dark */
 /* === Base === */
@@ -166,7 +192,12 @@ img {
     height: auto;
     vertical-align: middle;
 }
-
+.setu_logo{
+    --logo-size:50px;
+    width: var(--logo-size);
+    height: var(--logo-size);
+    margin-right: 10px;
+}
 /* === Resusable CSS === */
 .section {
     padding-top: 7rem;
@@ -286,3 +317,4 @@ img {
         margin-right: var(--mb-1);
     }
 }
+
