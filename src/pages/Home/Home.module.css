@@ -12,11 +12,13 @@
 
 .signing_wrapper{
     color: var(--utils_blue-color);
+    font-weight: 400;
 }
 
 .has_invite{
     color: var(--utils_blue-color);
     margin-left: 5px;
+    font-weight: bold;
 }
 .has_invite:hover{
     color: hsl(212, 100%, 33%);

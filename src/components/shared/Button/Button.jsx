@@ -1,10 +1,10 @@
 import styles from './Button.module.css'
-const Button = ({ label, icon1, icon2 }) => {
+const Button = ({ label, icon1, icon2,onClick }) => {
     return (
-        <button className={`${styles.btn_primary}`}>
-            <img src={icon1} />
+        <button onClick={onClick} className={`${styles.btn_primary}`}>
+            <img className={`${styles.icon}`} src={icon1} />
             <span>{label}</span>
-            <img src={icon2} />
+            <img className={`${styles.icon}`} src={icon2} />
         </button>
     )
 }

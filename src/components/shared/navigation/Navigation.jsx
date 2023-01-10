@@ -8,6 +8,7 @@ const Navigation = () => {
                 <img src={LOGO} className='setu_logo' alt='logo'/>
                 <span className={`${styles.logo_text}`}>{LOGO_TEXT}</span>
             </Link>
+            
         </nav>
     )
 }

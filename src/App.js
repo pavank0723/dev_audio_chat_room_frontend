@@ -1,10 +1,8 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
+import { Error, Home, Login, Register } from './pages';
+import { Navigation } from './components';
 
-import Home from './pages/Home/Home';
-import NotFound from './pages/Error/NotFound';
-import Navigation from './components/shared/navigation/Navigation';
-import Login from './pages/Login/Login';
 
 function App() {
   return (
@@ -13,7 +11,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />}/>
-        <Route path='/*' element={<NotFound />} />
+        <Route path='/register' element={<Register />}/>
+        <Route path='/*' element={<Error />} />
       </Routes>
     </>
   );
