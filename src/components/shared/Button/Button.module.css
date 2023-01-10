@@ -1,0 +1,19 @@
+
+.btn_primary{
+    background-color: var(--utils_blue-color);
+    color: var(--grey_lightest-color);
+    width: 300px;
+    min-width: max-content;
+    padding: 10px 20px;
+    margin-block: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+.btn_primary:hover{
+    background-color: hsl(212, 100%, 33%);
+}
