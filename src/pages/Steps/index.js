@@ -1,0 +1,5 @@
+export { default as StepPhoneOrEmail } from './StepPhoneOrEmail/StepPhoneOrEmail'
+export { default as StepOtp } from './StepOtp/StepOtp'
+export { default as StepFullName } from './StepFullName/StepFullName'
+export { default as StepAvatar } from './StepAvatar/StepAvatar'
+export { default as StepUsername } from './StepUsername/StepUsername'

@@ -1,9 +1,21 @@
-// import styles from './Login.module.css'
+import { useState } from 'react'
+import { StepOtp, StepPhoneOrEmail } from '../Steps'
+import styles from './Login.module.css'
 
+
+const steps = {
+    1: StepPhoneOrEmail,
+    2: StepOtp
+}
 const Login = () => {
-    return(
+    const [step, setStep] = useState(1)
+    const Step = steps[step]
+    function onNext(){
+        setStep(step+1)
+    }
+    return (
         <>
-            <h1>Login</h1>
+            <Step onNext={onNext}/>
         </>
     )
 }
