@@ -1,4 +1,7 @@
-export { default as Login } from './Login/Login'
-export { default as Register } from './Register/Register'
-export { default as Error } from './Error/NotFound'
-export { default as Home } from './Home/Home'
+export { default as Login } from './login/Login'
+export { default as Register } from './register/Register'
+export { default as Error } from './error/NotFound'
+export { default as Home } from './home/Home'
+
+export { default as Authenticate} from './authenticate/Authenticate'
+export {default as Rooms} from './rooms/Rooms'
