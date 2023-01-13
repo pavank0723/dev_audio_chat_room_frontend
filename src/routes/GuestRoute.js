@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 
-const ProtectedRoute = ({ Component }) => {
+const GuestRoute = ({ Component }) => {
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -17,4 +17,4 @@ const ProtectedRoute = ({ Component }) => {
     )
 }
 
-export default ProtectedRoute
+export default GuestRoute
