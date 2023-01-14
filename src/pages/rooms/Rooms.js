@@ -1,7 +1,7 @@
 const Rooms = () => {
-    return(
+    return (
         <>
-
+            <h1>Rooms Page</h1>
         </>
     )
 }

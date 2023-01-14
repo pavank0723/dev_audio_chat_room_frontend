@@ -2,7 +2,7 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import { Activate, Authenticate, Error, Home, Rooms } from './pages';
 import { Navigation } from './components';
-import { GuestRoute } from './routes';
+import { GuestRoute, ProtectedRoute, SemiProtectedRoute } from './routes';
 
 
 function App() {
@@ -11,13 +11,27 @@ function App() {
     <>
       <Navigation />
       <Routes>
-        <Route path='/' element={<Home />} />
-        {/* <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} /> */}
+        <Route element={<GuestRoute />}>
+          <Route path='/' element={<Home />} />
+          <Route path='/authenticate' element={<Authenticate />} />
+        </Route>
+
+        {/* <Route path='/' element={<GuestRoute Component={Home}/>} /> */}
+
         <Route path='/*' element={<Error />} />
-        <Route path='/authenticate' element={<Authenticate />} />
-        <Route path='/activate' element={<Activate />} />
-        <Route path='/rooms' element={<GuestRoute Component={Rooms} />} />
+
+        {/* <Route path='/activate' element={<Activate />} /> */}
+
+        {/* <SemiProtectedRoute path='/activate' Component={Activate}/> */}
+        <Route element={<SemiProtectedRoute />}>
+          <Route path='/activate' element={<Activate />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path='/rooms' element={<Rooms />} />
+          </Route>
+
+        </Route>
+
+
       </Routes>
     </>
   );

@@ -1,20 +1,18 @@
-import { useEffect } from "react"
-import { useNavigate } from "react-router-dom"
+// import { useEffect } from "react"
+// import { useNavigate } from "react-router-dom"
+import { Navigate, Outlet } from "react-router-dom"
 
+const isAuth = false
 const GuestRoute = ({ Component }) => {
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
-    useEffect(() => {
-        let login = localStorage.getItem('login')
-        if (!login) {
-            navigate('/authenticate')
-        }
-    })
-    return (
-        <>
-            <Component />
-        </>
-    )
+    // useEffect(() => {
+    //     if (!isAuth) {
+    //         // navigate('/authenticate')
+    //         <Navigate to='/authenticate'/>
+    //     }
+    // },[])
+    return !isAuth ? <Outlet /> :  <Navigate to='/rooms' />
 }
 
 export default GuestRoute
