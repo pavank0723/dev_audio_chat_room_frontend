@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { StepAvatar, StepFullName, StepUsername } from "../Steps"
+import { StepAvatar, StepFullName, StepUsername } from "../steps"
 
 const steps = {
     1: StepFullName,

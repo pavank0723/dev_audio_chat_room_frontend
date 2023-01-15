@@ -1,10 +1,7 @@
 //#region App String
-export { HOME_HEADING } from './AppString'
-export { HOME_PARA } from './AppString'
-export { LOGO_TEXT } from './AppString'
+export { HOME_HEADING, HOME_PARA, LOGO_TEXT, PHONE_HEADING, EMAIL_HEADING, BOTTOM_NOTE, OTP_HEADING, NOT_RECEIVED, FULL_NAME_HEADING, FULL_NAME_NOTE, HOW_THIS_PHOTO, CHOOSE_IMAGE } from './AppString'
 //#endregion
 
 //#region App Image
-export { LOGO } from './AppImage'
-export { IC_BACK_ARROW } from './AppImage'
+export { LOGO, IC_BACK_ARROW, IMG_PHONE, IMG_EMAIL, IC_PHONE, IC_EMAIL, IMG_LOCK, IMG_FULLNAME, IMG_DONE } from './AppImage'
 //#endregion

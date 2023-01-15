@@ -1,10 +1,35 @@
-import { Button } from '../../../components'
+import { useState } from 'react'
+import { IC_EMAIL, IC_PHONE } from '../../../utils'
+import Email from './email/Email'
+import Phone from './phone/Phone'
 import styles from './StepPhoneOrEmail.module.css'
-const StepPhoneOrEmail = ({onNext}) => {
+
+const phoneEmailMap = {
+    phone: Phone,
+    email: Email
+}
+const StepPhoneOrEmail = ({ onNext }) => {
+    const [tab, setTab] = useState('phone')
+    const Component = phoneEmailMap[tab]
+    // function onNext(){
+    //     // setTab(tab+1)
+    // }
     return (
         <>
-            <h1>StepPhoneOrEmail component</h1>
-            <Button onClick={onNext} label="Next"/>
+            <div className={`${styles.card_wrapper}`}>
+                <div>
+                    <div className={`${styles.button_wrapper}`}>
+                        <button className={`${styles.btn_tab} ${tab === 'phone' ? styles.btn_tab_active : ''}`} onClick={() => setTab('phone')}>
+                            <img src={IC_PHONE} alt='phone' />
+                        </button>
+                        <button className={`${styles.btn_tab} ${tab === 'email' ? styles.btn_tab_active : ''}`} onClick={() => setTab('email')}>
+                            <img src={IC_EMAIL} alt='email' />
+                        </button>
+                    </div>
+                    
+                <Component onNext={onNext} />
+                </div>
+            </div>
         </>
     )
 }

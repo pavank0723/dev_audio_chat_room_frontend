@@ -1,17 +1,18 @@
 .card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 650px;
-    max-width: 50%;
     min-height: 450px;
     background: var(--main-color);
-    margin: auto;
-    padding: 30px;
+    padding: 80px;
     text-align: center;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-    padding: 100px;
     box-shadow: 0 -6px 10px 0 rgba(120, 120, 120, 0.2), 0 6px 8px 0 rgba(120, 120, 120, 0.2);
 }
 .heading_wrapper{

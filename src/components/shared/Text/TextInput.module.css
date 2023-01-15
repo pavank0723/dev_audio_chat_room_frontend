@@ -1,0 +1,15 @@
+.input{
+    background-color: var(--main_light-color);
+    border: none;
+    color: var(--grey_lightest-color);
+    padding: 10px 20px;
+    width: 250px;
+    font-size: var(--small-font-size);
+    outline: none;
+    margin: 20px 0;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}

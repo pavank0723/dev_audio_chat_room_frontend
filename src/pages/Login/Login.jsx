@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { StepOtp, StepPhoneOrEmail } from '../Steps'
+import { StepOtp, StepPhoneOrEmail } from '../steps'
 import styles from './Login.module.css'
 
 

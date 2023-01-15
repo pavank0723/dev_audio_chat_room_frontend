@@ -1,7 +1,6 @@
 /* === Google Fonts  === */
- @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:wght@400;500;600;700&family=Tiro+Devanagari+Hindi&display=swap');
- */
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:wght@400;500;600;700&family=Tiro+Devanagari+Hindi&display=swap');
+*/
 /* === Variables css === */
 
 :root {
@@ -21,13 +20,13 @@
     --container-color: #fff;
     --border-color: rgba(0, 0, 0, 0.1);
     --border-color2: rgba(0, 0, 0, 0.15);
-    --my-image-color:linear-gradient(to right, #F9D976 , #F39F86);
+    --my-image-color: linear-gradient(to right, #F9D976, #F39F86);
 
     --main_lightest-color: hsl(0, 2%, 25%);
     --main_light-color: hsl(0, 0%, 20%);
     --main-color: hsl(0, 0%, 15%);
-    --main_dark-color:hsl(0, 0%, 11%);
-    --main_darkest-color:hsl(0, 0%, 7%);
+    --main_dark-color: hsl(0, 0%, 11%);
+    --main_darkest-color: hsl(0, 0%, 7%);
 
     --grey_lightest-color: hsl(189, 100%, 99%);
     --grey_light-color: hsl(200, 32%, 93%);
@@ -36,12 +35,12 @@
     --grey_dark-color: hsl(200, 6%, 30%);
     --grey_darkest-color: hsl(200, 6%, 10%);
 
-    --utils_blue-color:hsl(212, 100%, 50%);
-    --utils_purple-color:hsl(240, 69%, 60%);
-    --utils_red-color:hsl(4, 90%, 58%);
-    --utils_pink-color:hsl(340, 82%, 52%);
+    --utils_blue-color: hsl(212, 100%, 50%);
+    --utils_purple-color: hsl(240, 69%, 60%);
+    --utils_red-color: hsl(4, 90%, 58%);
+    --utils_pink-color: hsl(340, 82%, 52%);
 
-    --card-color: var(--main-color)
+    --card-color: var(--main-color);
     /* === Font & Typography === */
     /* --- .5rem = 8px | 1rem = 16px | 2rem = 32px ... --- */
 
@@ -54,7 +53,7 @@
     --small-font-size: 0.875rem;
     --smaller-font-size: 0.813rem;
     --tiny-font-size: 0.625rem;
-    
+
 
     /* === Font Weight === */
     --font-medium: 500;
@@ -100,7 +99,14 @@
 
 /* === Theme ===*/
 /* Light */
-.light-theme{
+.light-theme {
+    --big-font-size: 2.75rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+    --smaller-font-size: 0.75rem;
     --header-height: 3.5rem;
     --first-color: hsl(48, 100%, 50%);
     /* hsl(353, 100%, 65%)*/
@@ -114,11 +120,38 @@
     --border-color: rgba(0, 0, 0, 0.1);
     --border-color2: rgba(0, 0, 0, 0.15);
     --border-color3: rgba(0, 0, 0, 0.3);
-    --my-image-color:linear-gradient(to right, #F9D976 , #F39F86);
-    --card-color : var(var(--grey_light-color))
+    --my-image-color: linear-gradient(to right, #F9D976, #F39F86);
+    --card-color: var(--grey_light-color);
+
+    --main_lightest-color: hsl(0, 2%, 25%);
+    --main_light-color: hsl(0, 0%, 20%);
+    --main-color: hsl(0, 0%, 15%);
+    --main_dark-color: hsl(0, 0%, 11%);
+    --main_darkest-color: hsl(0, 0%, 7%);
+
+    --grey_lightest-color: hsl(189, 100%, 99%);
+    --grey_light-color: hsl(200, 32%, 93%);
+    --grey_before-grey-color: hsl(180, 1%, 77%);
+    --grey-color: hsl(200, 6%, 50%);
+    --grey_dark-color: hsl(200, 6%, 30%);
+    --grey_darkest-color: hsl(200, 6%, 10%);
+
+    --utils_blue-color: hsl(212, 100%, 50%);
+    --utils_purple-color: hsl(240, 69%, 60%);
+    --utils_red-color: hsl(4, 90%, 58%);
+    --utils_pink-color: hsl(340, 82%, 52%);
+
+    --card-color: var(--main-color);
 }
 
-.dark-theme{
+.dark-theme {
+    --big-font-size: 2.75rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+    --smaller-font-size: 0.75rem;
     --header-height: 3.5rem;
     --first-color: #ffcc00;
     /* hsl(353, 100%, 65%)*/
@@ -132,9 +165,29 @@
     --border-color: rgba(245, 245, 245, 0.1);
     --border-color2: rgba(255, 255, 255, 0.15);
     --border-color3: rgba(245, 245, 245, 0.3);
-    --my-image-color:linear-gradient(to right, #F9D976 , #F39F86);
-    --utils_blue-color:hsl(212, 100%, 50%);
+    --my-image-color: linear-gradient(to right, #F9D976, #F39F86);
+
+    --main_lightest-color: hsl(0, 2%, 25%);
+    --main_light-color: hsl(0, 0%, 20%);
+    --main-color: hsl(0, 0%, 15%);
+    --main_dark-color: hsl(0, 0%, 11%);
+    --main_darkest-color: hsl(0, 0%, 7%);
+
+    --grey_lightest-color: hsl(189, 100%, 99%);
+    --grey_light-color: hsl(200, 32%, 93%);
+    --grey_before-grey-color: hsl(180, 1%, 77%);
+    --grey-color: hsl(200, 6%, 50%);
+    --grey_dark-color: hsl(200, 6%, 30%);
+    --grey_darkest-color: hsl(200, 6%, 10%);
+
+    --utils_blue-color: hsl(212, 100%, 50%);
+    --utils_purple-color: hsl(240, 69%, 60%);
+    --utils_red-color: hsl(4, 90%, 58%);
+    --utils_pink-color: hsl(340, 82%, 52%);
+
+    --card-color: var(--main-color)
 }
+
 /* Dark */
 /* === Base === */
 
@@ -157,7 +210,7 @@ textarea {
 }
 
 body {
-    background-color: var(--body-color);
+    background-color: var(--main_dark-color);
     line-height: 1.6;
     color: var(--text-color);
 }
@@ -168,17 +221,17 @@ h3 {
     color: var(--title-color);
     font-weight: var(--font-semi_bold);
     line-height: 1.2;
-    -webkit-font-smoothing:antialiased;
+    -webkit-font-smoothing: antialiased;
 }
 
 ul {
     list-style: none;
-    -webkit-font-smoothing:antialiased;
+    -webkit-font-smoothing: antialiased;
 }
 
 a {
-    text-decoration: none; 
-    -webkit-font-smoothing:antialiased;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
 }
 
 button {
@@ -192,12 +245,14 @@ img {
     height: auto;
     vertical-align: middle;
 }
-.setu_logo{
-    --logo-size:50px;
+
+.setu_logo {
+    --logo-size: 50px;
     width: var(--logo-size);
     height: var(--logo-size);
     margin-right: 10px;
 }
+
 /* === Resusable CSS === */
 .section {
     padding-top: 7rem;
@@ -207,7 +262,7 @@ img {
 .section_title {
     font-size: var(--h1-font-size);
     margin-left: 0.875;
-    
+
     font-weight: var(--font-bold);
     position: relative;
 }
@@ -317,4 +372,3 @@ img {
         margin-right: var(--mb-1);
     }
 }
-

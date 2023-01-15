@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { StepAvatar, StepFullName, StepOtp, StepPhoneOrEmail, StepUsername } from '../Steps'
+import { StepAvatar, StepFullName, StepOtp, StepPhoneOrEmail, StepUsername } from '../steps'
 import styles from './Register.module.css'
 
 const steps = {
