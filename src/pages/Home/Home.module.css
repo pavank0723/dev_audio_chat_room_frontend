@@ -8,13 +8,10 @@
     line-height: 1.6;
     color: var(--grey_lightest-color);
 }
-
-
 .signing_wrapper{
     color: var(--utils_blue-color);
     font-weight: 400;
 }
-
 .has_invite{
     color: var(--utils_blue-color);
     margin-left: 5px;

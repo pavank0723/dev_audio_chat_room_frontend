@@ -1,0 +1,6 @@
+.card_wrapper{
+    display:flex;
+    align-items: center;
+    width: 650px;
+    margin: 0 auto;
+}
