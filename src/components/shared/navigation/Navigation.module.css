@@ -1,8 +1,9 @@
-.navbar{
+.navbar {
+    display: flex;
     padding: 20px 0;
 }
 
-.brand{
+.brand {
     display: flex;
     margin: 0;
     width: 100%;
@@ -10,4 +11,18 @@
     align-items: center;
     font-weight: bold;
     font-size: 22px;
+}
+
+.nav_toggle_main {
+    display: flex;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: var(--utils_blue-color);
+    align-items: center;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
 }
