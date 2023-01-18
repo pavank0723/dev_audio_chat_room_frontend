@@ -108,20 +108,6 @@
     --small-font-size: 0.813rem;
     --smaller-font-size: 0.75rem;
     --header-height: 3.5rem;
-    --first-color: hsl(48, 100%, 50%);
-    /* hsl(353, 100%, 65%)*/
-    --second-color: hsl(30, 90%, 59%);
-    --title-color: hsl(60, 2%, 10%);
-    --text-color: hsl(30, 2%, 20%);
-    --body-color: hsl(258, 68%, 98%);
-    --box-color: hsl(41, 100%, 89%);
-    --container-color: #fff;
-    --normal-color: #fff;
-    --border-color: rgba(0, 0, 0, 0.1);
-    --border-color2: rgba(0, 0, 0, 0.15);
-    --border-color3: rgba(0, 0, 0, 0.3);
-    --my-image-color: linear-gradient(to right, #F9D976, #F39F86);
-    --card-color: var(--grey_light-color);
 
     --main_lightest-color: hsl(0, 2%, 25%);
     --main_light-color: hsl(0, 0%, 20%);
@@ -140,8 +126,22 @@
     --utils_purple-color: hsl(240, 69%, 60%);
     --utils_red-color: hsl(4, 90%, 58%);
     --utils_pink-color: hsl(340, 82%, 52%);
+    /* --first-color: hsl(48, 100%, 50%);
+    
+    --second-color: hsl(30, 90%, 59%); */
+    --title-color: var(--main_dark-color);
+    --text-color: var(--main-color);
+    --body-color: var(--grey_lightest-color);
+    --box-color: hsl(41, 100%, 89%);
+    --container-color: var(--grey_before-grey-color);
+    --normal-color: var(--grey_before-grey-color);
+    --border-color: rgba(0, 0, 0, 0.1);
+    --border-color2: rgba(0, 0, 0, 0.15);
+    --border-color3: rgba(0, 0, 0, 0.3);
+    --my-image-color: linear-gradient(to right, #F9D976, #F39F86);
+    --card-color: var(--grey_light-color);
 
-    --card-color: var(--main-color);
+    
 }
 
 .dark-theme {
@@ -153,19 +153,6 @@
     --small-font-size: 0.813rem;
     --smaller-font-size: 0.75rem;
     --header-height: 3.5rem;
-    --first-color: #ffcc00;
-    /* hsl(353, 100%, 65%)*/
-    --second-color: #f59638;
-    --title-color: #f8f8f8;
-    --text-color: #f3f3f3;
-    --body-color: #1D1D1D;
-    --box-color: hsl(41, 100%, 89%);
-    --container-color: #171717;
-    --normal-color: #fff;
-    --border-color: rgba(245, 245, 245, 0.1);
-    --border-color2: rgba(255, 255, 255, 0.15);
-    --border-color3: rgba(245, 245, 245, 0.3);
-    --my-image-color: linear-gradient(to right, #F9D976, #F39F86);
 
     --main_lightest-color: hsl(0, 2%, 25%);
     --main_light-color: hsl(0, 0%, 20%);
@@ -185,7 +172,21 @@
     --utils_red-color: hsl(4, 90%, 58%);
     --utils_pink-color: hsl(340, 82%, 52%);
 
-    --card-color: var(--main-color)
+    /* --first-color: #ffcc00;
+    
+    --second-color: #f59638; */
+    --title-color:var(--grey_lightest-color);
+    --text-color: var(--grey_light-color);
+    --body-color: var(--main_darkest-color);
+    --box-color: hsl(41, 100%, 89%);
+    --container-color: var(--main_dark-color);
+    --normal-color: var(--grey_light-color);
+    --border-color: rgba(2, 2, 2, 0.1);
+    --border-color2: rgba(255, 255, 255, 0.15);
+    --border-color3: rgba(245, 245, 245, 0.3);
+    --my-image-color: linear-gradient(to right, #F9D976, #F39F86);
+
+    --card-color: var(--main_dark-color);
 }
 
 /* Dark */
@@ -210,7 +211,7 @@ textarea {
 }
 
 body {
-    background-color: var(--main_dark-color);
+    background-color: var(--body-color);
     line-height: 1.6;
     color: var(--text-color);
 }

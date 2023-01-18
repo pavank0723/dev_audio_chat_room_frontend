@@ -7,6 +7,7 @@
 .theme {
     background-color: var(--first-color);
     border-radius: 50px;
+    color: var(--grey_light-color);
     cursor: pointer;
     width: 25px;
     height: 25px;
@@ -23,7 +24,7 @@
     font-style: normal;
     font-weight: var(--font-bold);
     font-size: var(--normal-font-size);
-    color: var(--title-color);
+    color: var(--grey_light-color);
 
 }
 

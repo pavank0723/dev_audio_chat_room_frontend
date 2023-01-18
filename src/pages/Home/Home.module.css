@@ -6,7 +6,7 @@
 .text{
     font-size: 18px;
     line-height: 1.6;
-    color: var(--grey_lightest-color);
+    color: var(--text-color);
 }
 .signing_wrapper{
     color: var(--utils_blue-color);

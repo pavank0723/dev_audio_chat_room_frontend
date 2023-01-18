@@ -1,7 +1,7 @@
 .input{
-    background-color: var(--main_light-color);
+    background-color: var(--normal-color);
     border: none;
-    color: var(--grey_lightest-color);
+    color: var(--main_dark-color);
     padding: 10px 20px;
     width: 250px;
     font-size: var(--small-font-size);
