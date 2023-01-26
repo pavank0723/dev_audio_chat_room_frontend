@@ -1,11 +1,26 @@
-import { Button } from '../../../components'
+import { useState } from 'react'
+import { Button, Card, TextInput } from '../../../components'
+import { FULL_NAME_HEADING, FULL_NAME_NOTE, IMG_FULLNAME } from '../../../utils'
 import styles from './StepFullName.module.css'
-const StepFullName = ({onNext}) => {
+const StepFullName = ({ onNext }) => {
+    const [name, setName] = useState('')
+
+    function nextStep() {
+        if (!name) {
+            return
+        }
+    }
     return (
         <>
-            <h1>StepFullName component</h1>
-            
-            <Button onClick={onNext} label="Next"/>
+            <Card title={FULL_NAME_HEADING} image={IMG_FULLNAME}>
+                <TextInput value={name} onChange={(e) => setName(e.target.value)} />
+                <p>{FULL_NAME_NOTE}</p>
+
+            </Card>
+
+            <div>
+                <Button onClick={onNext} label="Next" />
+            </div>
         </>
     )
 }

@@ -1,9 +1,12 @@
-import { Button } from '../../../components'
+import { Button, Card } from '../../../components'
+import { HOW_THIS_PHOTO, IMG_DONE } from '../../../utils'
 import styles from './StepAvatar.module.css'
 const StepAvatar = ({onNext}) => {
     return (
         <>
-            <h1>StepAvatar component</h1>
+            <Card title={HOW_THIS_PHOTO} image={IMG_DONE}>
+                
+            </Card>
             
             <Button onClick={onNext} label="Next"/>
         </>
