@@ -1,14 +1,15 @@
 import { useState } from "react"
 import { Button, Card, TextInput } from "../../../../components"
-import { sendOtp } from "../../../../https"
+import { sendOTP } from "../../../../https/index"
 import { BOTTOM_NOTE, IC_BACK_ARROW, IMG_PHONE, PHONE_HEADING } from "../../../../utils"
 import styles from '../StepPhoneOrEmail.module.css'
+
 const Phone = ({onNext}) => {
     const [phoneNumber,setPhoneNumber] = useState('')
 
     async function onSubmit(){
         //Server  request
-        const res = await sendOtp({phone:phoneNumber})
+        const res = await sendOTP({phone:phoneNumber})
         console.log(res)
         // onNext()
     }
