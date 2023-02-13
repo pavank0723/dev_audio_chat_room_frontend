@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Activate, Authenticate, Error, Home, Rooms } from './pages';
 import { Navigation } from './components';
 import { GuestRoute, ProtectedRoute, SemiProtectedRoute } from './routes';
+// import { useSelector } from 'react-redux';
 
 
 function App() {
@@ -28,7 +29,6 @@ function App() {
           <Route element={<ProtectedRoute />}>
             <Route path='/rooms' element={<Rooms />} />
           </Route>
-
         </Route>
 
 

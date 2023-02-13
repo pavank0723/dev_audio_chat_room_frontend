@@ -1,6 +1,6 @@
 import { Button, Card } from '../../../components'
 import { HOW_THIS_PHOTO, IMG_DONE } from '../../../utils'
-import styles from './StepAvatar.module.css'
+// import styles from './StepAvatar.module.css'
 const StepAvatar = ({onNext}) => {
     return (
         <>

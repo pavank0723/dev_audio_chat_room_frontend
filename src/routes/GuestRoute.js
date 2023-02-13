@@ -1,9 +1,10 @@
 // import { useEffect } from "react"
 // import { useNavigate } from "react-router-dom"
 import { Navigate, Outlet } from "react-router-dom"
+import { useSelector } from "react-redux"
 
-const isAuth = false
 const GuestRoute = ({ Component }) => {
+    const {isAuth} = useSelector((state) =>state.auth)
     // const navigate = useNavigate()
 
     // useEffect(() => {
