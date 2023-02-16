@@ -16,8 +16,7 @@ const StepPhoneOrEmail = ({ onNext }) => {
     // }
     return (
         <>
-            <div className={`${styles.card_wrapper}`}>
-                <div>
+            <div>
                     <div className={`${styles.button_wrapper}`}>
                         <button className={`${styles.btn_tab} ${tab === 'phone' ? styles.btn_tab_active : ''}`} onClick={() => setTab('phone')}>
                             <img src={IC_PHONE} alt='phone' />
@@ -29,7 +28,6 @@ const StepPhoneOrEmail = ({ onNext }) => {
                     
                 <Component onNext={onNext} />
                 </div>
-            </div>
         </>
     )
 }

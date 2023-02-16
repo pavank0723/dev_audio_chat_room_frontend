@@ -17,6 +17,6 @@ export const FULL_NAME_HEADING = 'What’s your full name?'
 
 export const FULL_NAME_NOTE = `People use real names at ${LOGO_TEXT}! :)`
 
-export const HOW_THIS_PHOTO = 'How’s this photo?'
-
-export const CHOOSE_IMAGE = 'Choose a different photo'
+export const AVATAR_HEADING = 'Okay,'
+export const AVATAR_SUBHEADING = "How's this photo"
+export const AVATAR_CHOOSE = "Choose a different photo"

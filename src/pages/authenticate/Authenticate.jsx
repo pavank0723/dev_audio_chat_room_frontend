@@ -10,13 +10,13 @@ const steps = {
 const Authenticate = () => {
     const [step, setStep] = useState(1)
     const Step = steps[step]
-    function onNext(){
-        setStep(step+1)
+    function onNext() {
+        setStep(step + 1)
     }
     return (
-        <>
-            <Step onNext={onNext}/>
-        </>
+        <div className="card_wrapper">
+            <Step onNext={onNext} />
+        </div>
     )
 }
 

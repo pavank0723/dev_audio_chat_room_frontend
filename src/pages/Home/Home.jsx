@@ -8,7 +8,7 @@ const Home = () => {
         navigate('/authenticate')
     }
     return (
-        <div className={`${styles.card_wrapper}`}>
+        <div className='card_wrapper'>
             <Card title={HOME_HEADING} image={LOGO}>
                 <p className={`${styles.text}`}>{HOME_PARA}</p>
                 <div className=''>

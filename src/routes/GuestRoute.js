@@ -13,7 +13,8 @@ const GuestRoute = ({ Component }) => {
     //         <Navigate to='/authenticate'/>
     //     }
     // },[])
-    return !isAuth ? <Outlet /> :  <Navigate to='/rooms' />
+    // return isAuth ? <Navigate to='/rooms' /> : <Outlet /> 
+    return isAuth ? <Navigate to='/rooms' /> : <Outlet /> 
 }
 
 export default GuestRoute

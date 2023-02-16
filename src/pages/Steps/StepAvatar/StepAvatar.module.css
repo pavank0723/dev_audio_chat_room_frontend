@@ -1,0 +1,36 @@
+.subHeading{
+    color: var(--grey_before-grey-color);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.avaterWrapper{
+    width:110px;
+    height: 110px;
+    border: 3px solid var(--utils_blue-color);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.avatarImg{
+    width: 90%;
+    height: 90%;
+    object-fit:cover;
+}
+
+.avatarInput{
+    display: none;
+}
+
+.avatarLabel{
+    color: var(--utils_blue-color);
+    margin: 10px 0px;
+    display: inline-block;
+    cursor: pointer;
+}

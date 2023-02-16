@@ -24,19 +24,17 @@ const StepOtp = () => {
     }
     return (
         <>
-            <div className={`${styles.card_wrapper}`}>
-                <Card title={OTP_HEADING} image={IMG_LOCK}>
-                    {/* <p className={`${styles.text}`}>{HOME_PARA}</p> */}
-                    <TextInput input_type='text' input_placeholder='' value={otp} onChange={(e) => setOtp(e.target.value)} />
-                    <div>
-                        <Button label="Next" icon2={IC_BACK_ARROW} onClick={onSubmit} />
-                    </div>
-                    {/* <div className={`${styles.card_note}`}>
+            <Card title={OTP_HEADING} image={IMG_LOCK}>
+                {/* <p className={`${styles.text}`}>{HOME_PARA}</p> */}
+                <TextInput input_type='text' input_placeholder='' value={otp} onChange={(e) => setOtp(e.target.value)} />
+                <div>
+                    <Button label="Next" icon2={IC_BACK_ARROW} onClick={onSubmit} />
+                </div>
+                {/* <div className={`${styles.card_note}`}>
                 <p >{BOTTOM_NOTE}</p>
 
             </div> */}
-                </Card>
-            </div>
+            </Card>
         </>
     )
 }

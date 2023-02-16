@@ -11,3 +11,4 @@ export const IMG_EMAIL = `${rootIconPath}/img_email.svg`
 export const IMG_LOCK = `${rootIconPath}/img_lock.svg`
 export const IMG_FULLNAME = `${rootIconPath}/img_fullname.svg`
 export const IMG_DONE = `${rootIconPath}/img_done.svg`
+export const PIC_AVATAR_DEF = `${rootImagePath}/img_avatar_default.png`
