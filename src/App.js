@@ -1,14 +1,20 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import { Activate, Authenticate, Error, Home, Rooms } from './pages';
-import { Navigation } from './components';
+import { Loader, Navigation } from './components';
 import { GuestRoute, ProtectedRoute, SemiProtectedRoute } from './routes';
+import { useLoadingWithRefresh } from './hooks';
 // import { useSelector } from 'react-redux';
 
 
 function App() {
-  return (
 
+  // return <Loader message="Loading, please wait"/>
+  //Call Refresh Endpoint
+  const {loading} = useLoadingWithRefresh()
+  return loading ? (
+    <Loader message="Loading, please wait"/>
+  ) : (
     <>
       <Navigation />
       <Routes>
@@ -26,11 +32,10 @@ function App() {
         {/* <SemiProtectedRoute path='/activate' Component={Activate}/> */}
         <Route element={<SemiProtectedRoute />}>
           <Route path='/activate' element={<Activate />} />
-          <Route element={<ProtectedRoute />}>
-            <Route path='/rooms' element={<Rooms />} />
-          </Route>
         </Route>
-
+        <Route element={<ProtectedRoute />}>
+          <Route path='/rooms' element={<Rooms />} />
+        </Route>
 
       </Routes>
     </>

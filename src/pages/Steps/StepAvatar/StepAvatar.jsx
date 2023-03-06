@@ -1,4 +1,4 @@
-import { Button, Card } from '../../../components'
+import { Button, Card, Loader } from '../../../components'
 import { AVATAR_HEADING, AVATAR_SUBHEADING, AVATAR_CHOOSE, IMG_DONE, PIC_AVATAR_DEF } from '../../../utils'
 import styles from './StepAvatar.module.css'
 import { useSelector } from 'react-redux'
@@ -6,10 +6,12 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { setAvatar } from '../../../store/activateSlice'
 import { activateUser } from '../../../https'
+import { setAuth } from '../../../store/authSlice'
 
-const StepAvatar = ({ onNext }) => {
+const StepAvatar = () => {
     const { name,avatar } = useSelector((state) => state.activate)
     const [avatarImg, setAvatarImg] = useState(PIC_AVATAR_DEF)
+    const [loading,setLoading] = useState(false)
     const dispatch = useDispatch()
 
     function captureAvatar(e){
@@ -23,13 +25,22 @@ const StepAvatar = ({ onNext }) => {
         console.log(e)
     }
     async function onSubmit(){
+        if(!name || !avatar) return
+        setLoading(true)
         try {
-            const {data} = await activateUser({avatar})
+            const {data} = await activateUser({name,avatar})
+            if(data.auth){
+                dispatch(setAuth(data))
+            }
             console.log(data)
         } catch (error) {
             console.log(error)
         }
+        finally{
+            setLoading(false)
+        }
     }
+    if(loading) return <Loader message='Activation in progress...' />
     return (
         <>
             <Card title={`${AVATAR_HEADING} ${name}`} image={IMG_DONE}>
