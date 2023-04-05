@@ -1,6 +1,6 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import { Activate, Authenticate, Error, Home, Rooms } from './pages';
+import { Activate, Authenticate, Error, Home, Room, Rooms } from './pages';
 import { Loader, Navigation } from './components';
 import { GuestRoute, ProtectedRoute, SemiProtectedRoute } from './routes';
 import { useLoadingWithRefresh } from './hooks';
@@ -8,13 +8,16 @@ import { useLoadingWithRefresh } from './hooks';
 
 
 function App() {
-
   // return <Loader message="Loading, please wait"/>
+
   //Call Refresh Endpoint
-  const {loading} = useLoadingWithRefresh()
-  return loading ? (
-    <Loader message="Loading, please wait"/>
-  ) : (
+  const { loading } = useLoadingWithRefresh()
+  
+  return loading 
+  ? (
+    <Loader message="Loading, please wait" />
+  ) 
+  : (
     <>
       <Navigation />
       <Routes>
@@ -35,6 +38,9 @@ function App() {
         </Route>
         <Route element={<ProtectedRoute />}>
           <Route path='/rooms' element={<Rooms />} />
+        </Route>
+        <Route element={<ProtectedRoute />}>
+          <Route path='/room/:id' element={<Room />} />
         </Route>
 
       </Routes>

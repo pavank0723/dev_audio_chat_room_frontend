@@ -6,7 +6,7 @@
 }
 
 .brand {
-    display: flex;
+    /* display: flex; */
     margin: 0;
     width: 100%;
     color: var(--text-color);
@@ -18,8 +18,9 @@
 .nav_toggle_main {
     display: flex;
     justify-content: center;
-    width: 30px;
-    height: 30px;
+    width: 55px;
+    height: 45px;
+    margin-right: 10px;
     background-color: var(--utils_blue-color);
     align-items: center;
     border-radius: 50px;
@@ -27,4 +28,29 @@
     -moz-border-radius: 50px;
     -ms-border-radius: 50px;
     -o-border-radius: 50px;
+}
+.nav_Right{
+    display: flex;
+    align-items: center;
+    margin-inline: 10px;
+}
+.logout_btn{
+    background:none;
+    /* margin:0 30px; */
+    height: 50px;
+    padding: 0;
+    margin: 0;
+}
+
+.avatar {
+    
+    width: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #0077ff;
+    /* margin: 0px 0px; */
+    /* padding: 5px; */
+}
+.user_name{
+    margin-right: 5px;
 }

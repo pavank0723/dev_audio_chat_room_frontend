@@ -9,38 +9,38 @@ import { activateUser } from '../../../https'
 import { setAuth } from '../../../store/authSlice'
 
 const StepAvatar = () => {
-    const { name,avatar } = useSelector((state) => state.activate)
+    const { name, avatar } = useSelector((state) => state.activate)
     const [avatarImg, setAvatarImg] = useState(PIC_AVATAR_DEF)
-    const [loading,setLoading] = useState(false)
+    const [loading, setLoading] = useState(false)
     const dispatch = useDispatch()
 
-    function captureAvatar(e){
+    function captureAvatar(e) {
         const uploadedImg = e.target.files[0]
         const reader = new FileReader()
         reader.readAsDataURL(uploadedImg)
-        reader.onloadend = function (){
+        reader.onloadend = function () {
             setAvatarImg(reader.result)
             dispatch(setAvatar(reader.result))
         }
         console.log(e)
     }
-    async function onSubmit(){
-        if(!name || !avatar) return
+    async function onSubmit() {
+        if (!name || !avatar) return
         setLoading(true)
         try {
-            const {data} = await activateUser({name,avatar})
-            if(data.auth){
+            const { data } = await activateUser({ name, avatar })
+            if (data.auth) {
                 dispatch(setAuth(data))
             }
             console.log(data)
         } catch (error) {
             console.log(error)
         }
-        finally{
+        finally {
             setLoading(false)
         }
     }
-    if(loading) return <Loader message='Activation in progress...' />
+    if (loading) return <Loader message='Activation in progress...' />
     return (
         <>
             <Card title={`${AVATAR_HEADING} ${name}`} image={IMG_DONE}>

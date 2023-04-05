@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setAvatar } from '../store/activateSlice';
+import { setAuth } from '../store/authSlice';
 
 export function useLoadingWithRefresh(){
     const [loading, setLoading] = useState(true)
@@ -12,7 +12,7 @@ export function useLoadingWithRefresh(){
                 const {data}  = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/auth/refresh`,{
                     withCredentials: true
                 })
-                dispatch(setAvatar(data))
+                dispatch(setAuth(data))
                 setLoading(false)
             } catch (error) {
                 console.log(error)

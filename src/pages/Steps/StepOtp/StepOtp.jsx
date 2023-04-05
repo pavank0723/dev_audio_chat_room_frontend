@@ -13,7 +13,7 @@ const StepOtp = () => {
     const dispatch = useDispatch()
 
     async function onSubmit() {
-        if(!otp || !phone || !hash) return
+        if (!otp || !phone || !hash) return
         try {
             const { data } = await verifyOtp({ otp, phone, hash })
             console.log(data)
@@ -27,7 +27,10 @@ const StepOtp = () => {
         <>
             <Card title={OTP_HEADING} image={IMG_LOCK}>
                 {/* <p className={`${styles.text}`}>{HOME_PARA}</p> */}
-                <TextInput input_type='text' input_placeholder='' value={otp} onChange={(e) => setOtp(e.target.value)} />
+                <div className={styles.textField}>
+                    <TextInput input_type='text' input_placeholder='' value={otp} onChange={(e) => setOtp(e.target.value)} />
+                </div>
+
                 <div>
                     <Button label="Next" icon2={IC_BACK_ARROW} onClick={onSubmit} />
                 </div>

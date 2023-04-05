@@ -287,6 +287,7 @@ img {
     justify-content: center;
     min-height: calc(100vh - 140px);
 }
+
 /* === Button === */
 .btn {
     padding: 1.25rem 2rem;

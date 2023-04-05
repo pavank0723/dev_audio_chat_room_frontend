@@ -21,7 +21,10 @@ const Phone = ({ onNext }) => {
     return (
         <Card title={PHONE_HEADING} image={IMG_PHONE}>
             {/* <p className={`${styles.text}`}>{HOME_PARA}</p> */}
+            <div className={styles.textField}>
             <TextInput input_type='text' input_placeholder='+91 00000000' value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
+            </div>
+            
             <div>
                 <Button label="Next" icon2={IC_BACK_ARROW} onClick={onSubmit} />
             </div>

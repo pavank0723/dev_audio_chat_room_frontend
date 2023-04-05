@@ -1,3 +1,7 @@
 .card_wrapper{
     composes: card_wrapper from '../../../App.module.css'
 }
+
+.textField{
+    width: 300px !important;
+}

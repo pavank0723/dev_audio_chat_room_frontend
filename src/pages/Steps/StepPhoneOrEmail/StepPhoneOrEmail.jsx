@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { IC_EMAIL, IC_PHONE } from '../../../utils'
 import Email from './email/Email'
-import Phone from './phone/Phone'
 import styles from './StepPhoneOrEmail.module.css'
+import Phone from './phone/Phone'
 
 const phoneEmailMap = {
     phone: Phone,

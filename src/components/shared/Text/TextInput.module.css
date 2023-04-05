@@ -2,8 +2,7 @@
     background-color: var(--normal-color);
     border: none;
     color: var(--main_dark-color);
-    padding: 10px 20px;
-    width: 250px;
+    padding: 10px 20px;  
     font-size: var(--small-font-size);
     outline: none;
     margin: 20px 0;
@@ -12,4 +11,8 @@
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
+}
+
+.textField{
+    width:300px !important;
 }
