@@ -32,12 +32,16 @@ const AddRoom = ({ onClose }) => {
                     <h3 className={styles.heading}>
                         Enter the topic to be disscussed
                     </h3>
-                    <TextInput
-                        fullwidth="true"
-                        value={topic}
-                        input_placeholder="e.g. Developer issues"
-                        onChange={(e) => setTopic(e.target.value)}
-                    />
+                    <div className={styles.textField}>
+                        <TextInput
+                            fullwidth="true"
+                            value={topic}
+                            input_placeholder="e.g. Developer issues"
+                            onChange={(e) => setTopic(e.target.value)}
+                        />
+
+                    </div>
+
                     <h2 className={styles.subHeading}>Room types</h2>
                     <div className={styles.roomTypes}>
                         <div

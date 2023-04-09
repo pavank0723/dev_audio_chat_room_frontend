@@ -10,7 +10,7 @@ export const useStateWithCallback = (initialState) => {
         setState((prev) => {
             return typeof newState === 'function' ? newState(prev) : newState()
         })
-    },)
+    },[])
 
     useEffect(() => {
         if (cbRef.current) {

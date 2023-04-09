@@ -16,7 +16,7 @@
 }
 
 .searchBox {
-    background: #262626;
+    background: var(--card-color);
     margin-left: 20px;
     display: flex;
     align-items: center;
@@ -30,7 +30,7 @@
     border: none;
     outline: none;
     padding: 10px;
-    color: #fff;
+    color: var(--title-color);
     width: 100%;
 }
 
@@ -47,7 +47,6 @@
     height: 4px;
     background: #0077ff;
 }
-
 .startRoomButton {
     display: flex;
     align-items: center;
