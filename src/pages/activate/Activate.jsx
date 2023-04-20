@@ -1,25 +1,24 @@
-import { useState } from "react"
-import { StepAvatar, StepFullName, StepUsername } from "../steps"
+import React, { useState } from 'react';
+import StepName from '../Steps/StepName/StepName';
+import StepAvatar from '../Steps/StepAvatar/StepAvatar';
 
 const steps = {
-    1: StepFullName,
+    1: StepName,
     2: StepAvatar,
-    // 3: StepUsername
-}
+};
 
 const Activate = () => {
-    const [step, setStep] = useState(1)
-    const Step = steps[step]
+    const [step, setStep] = useState(1);
+    const Step = steps[step];
+
     function onNext() {
-        setStep(step + 1)
+        setStep(step + 1);
     }
     return (
-        <>
-            <div className="card_wrapper">
-                <Step onNext={onNext} />
-            </div>
-        </>
-    )
-}
+        <div className="cardWrapper">
+            <Step onNext={onNext}></Step>
+        </div>
+    );
+};
 
-export default Activate
+export default Activate;

@@ -1,12 +1,11 @@
-import { useEffect, useState } from 'react';
-import { AddRoom, RoomCard } from '../../components';
-import { IC_SEARCH, IC_START_ROOM } from '../../utils';
+import React, { useState, useEffect } from 'react';
+import AddRoomModal from '../../components/AddRoomModal/AddRoomModal';
+import RoomCard from '../../components/RoomCard/RoomCard';
 import styles from './Rooms.module.css';
-import { getAllRooms } from '../../https';
+import { getAllRooms } from '../../http';
+import { IC_SEARCH, IC_START_ROOM } from '../../utils/AppImage';
 
-//#region Dummy Data
 // const rooms = [
-
 //     {
 //         id: 1,
 //         topic: 'Which framework best for frontend ?',
@@ -14,12 +13,12 @@ import { getAllRooms } from '../../https';
 //             {
 //                 id: 1,
 //                 name: 'John Doe',
-//                 avatar: '/images/user/img_male_1.png',
+//                 avatar: '/images/monkey-avatar.png',
 //             },
 //             {
 //                 id: 2,
 //                 name: 'Jane Doe',
-//                 avatar: '/images/user/img_male_1.png',
+//                 avatar: '/images/monkey-avatar.png',
 //             },
 //         ],
 //         totalPeople: 40,
@@ -31,12 +30,12 @@ import { getAllRooms } from '../../https';
 //             {
 //                 id: 1,
 //                 name: 'John Doe',
-//                 avatar: '/images/user/img_male_1.png',
+//                 avatar: '/images/monkey-avatar.png',
 //             },
 //             {
 //                 id: 2,
 //                 name: 'Jane Doe',
-//                 avatar: '/images/user/img_male_1.png',
+//                 avatar: '/images/monkey-avatar.png',
 //             },
 //         ],
 //         totalPeople: 40,
@@ -48,12 +47,12 @@ import { getAllRooms } from '../../https';
 //             {
 //                 id: 1,
 //                 name: 'John Doe',
-//                 avatar: '/images/user/img_male_1.png',
+//                 avatar: '/images/monkey-avatar.png',
 //             },
 //             {
 //                 id: 2,
 //                 name: 'Jane Doe',
-//                 avatar: '/images/user/img_male_1.png',
+//                 avatar: '/images/monkey-avatar.png',
 //             },
 //         ],
 //         totalPeople: 40,
@@ -65,31 +64,31 @@ import { getAllRooms } from '../../https';
 //             {
 //                 id: 1,
 //                 name: 'John Doe',
-//                 avatar: '/images/user/img_male_1.png',
+//                 avatar: '/images/monkey-avatar.png',
 //             },
 //             {
 //                 id: 2,
 //                 name: 'Jane Doe',
-//                 avatar: '/images/user/img_male_1.png',
+//                 avatar: '/images/monkey-avatar.png',
 //             },
 //         ],
 //         totalPeople: 40,
 //     },
 // ];
-//#endregion 
 
 const Rooms = () => {
-    const [showPopUp, setShowPopUp] = useState(false)
-    const [rooms, setRooms] = useState([])
-    useEffect(()=>{
-        const fetchRooms =  async() => {
-            const {data} = await getAllRooms()
-            setRooms(data)
-        }
-        fetchRooms()
-    },[])
-    function onPopUp() {
-        setShowPopUp(true)
+    const [showModal, setShowModal] = useState(false);
+    const [rooms, setRooms] = useState([]);
+
+    useEffect(() => {
+        const fetchRooms = async () => {
+            const { data } = await getAllRooms();
+            setRooms(data);
+        };
+        fetchRooms();
+    }, []);
+    function openModal() {
+        setShowModal(true);
     }
     return (
         <>
@@ -99,11 +98,14 @@ const Rooms = () => {
                         <span className={styles.heading}>All voice rooms</span>
                         <div className={styles.searchBox}>
                             <img src={IC_SEARCH} alt="search" />
-                            <input type="text" placeholder='search' className={styles.searchInput} />
+                            <input type="text" placeholder='Search...' className={styles.searchInput} />
                         </div>
                     </div>
                     <div className={styles.right}>
-                        <button onClick={onPopUp} className={styles.startRoomButton}>
+                        <button
+                            onClick={openModal}
+                            className={styles.startRoomButton}
+                        >
                             <img
                                 src={IC_START_ROOM}
                                 alt="add-room"
@@ -119,7 +121,7 @@ const Rooms = () => {
                     ))}
                 </div>
             </div>
-            {showPopUp && <AddRoom onClose={() => setShowPopUp(false)}/>}
+            {showModal && <AddRoomModal onClose={() => setShowModal(false)} />}
         </>
     );
 };

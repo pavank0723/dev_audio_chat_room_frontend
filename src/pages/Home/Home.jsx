@@ -1,27 +1,39 @@
-import { useNavigate } from 'react-router-dom'
-import { Button, Card } from '../../components'
-import { HOME_HEADING, HOME_PARA, IC_BACK_ARROW, LOGO } from '../../utils'
-import styles from './Home.module.css'
+import React from 'react';
+import styles from './Home.module.css';
+import { Link, useHistory } from 'react-router-dom';
+import Card from '../../components/shared/Card/Card';
+import Button from '../../components/shared/Button/Button';
+import { HOME_HEADING, HOME_PARA, LOGO } from '../../utils';
+
 const Home = () => {
-    const navigate = useNavigate()
-    function startRegister(){
-        navigate('/authenticate')
+    const signInLinkStyle = {
+        color: '#0077ff',
+        fontWeight: 'bold',
+        textDecoration: 'none',
+        marginLeft: '10px',
+    };
+
+    const history = useHistory();
+    function startRegister() {
+        history.push('/authenticate');
     }
     return (
-        <div className='card_wrapper'>
-            <Card title={HOME_HEADING} image={LOGO}>
-                <p className={`${styles.text}`}>{HOME_PARA}</p>
-                <div className=''>
-                    <Button onClick={startRegister} label="Let's go" icon2={IC_BACK_ARROW} />
+        <div className={styles.cardWrapper}>
+            <Card title={HOME_HEADING} icon={LOGO}>
+                <p className={styles.text}>
+                    {HOME_PARA}
+                </p>
+                <div>
+                    <Button onClick={startRegister} text="Let's Go" />
                 </div>
-                <div className={`${styles.signing_wrapper}`}>
-                    <span >Have an invite text?</span>
-                    {/* <Link to='/login' className={`${styles.has_invite}`}>Sign In</Link> */}
+                <div className={styles.signinWrapper}>
+                    <span className={styles.hasInvite}>
+                        Have an invite text?
+                    </span>
                 </div>
             </Card>
         </div>
+    );
+};
 
-    )
-}
-
-export default Home
+export default Home;

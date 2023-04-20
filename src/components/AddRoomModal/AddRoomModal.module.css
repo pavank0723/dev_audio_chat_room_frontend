@@ -1,5 +1,5 @@
 .modalMask {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
@@ -13,15 +13,14 @@
 .modalBody {
     width: 50%;
     max-width: 500px;
-    background: #1d1d1d;
+    background: var(--card-color);
     border-radius: 20px;
-
     position: relative;
 }
 
 .modalHeader {
     padding: 30px;
-    border-bottom: 2px solid #262626;
+    border-bottom: 2px solid var(--card-color);
 }
 
 .roomTypes {
@@ -40,7 +39,7 @@
 }
 
 .typeBox.active {
-    background: #262626;
+    background: var(--room-color);
 }
 
 .heading {
@@ -57,7 +56,6 @@
     padding: 30px;
     text-align: center;
 }
-
 .modalFooter h2 {
     margin-bottom: 20px;
     font-weight: bold;
@@ -66,7 +64,7 @@
 
 .footerButton {
     background: #20bd5f;
-    color: #fff;
+    color:var(--title-color);
     display: flex;
     align-items: center;
     width: 200px;
@@ -89,18 +87,13 @@
 .closeButton {
     position: absolute;
     right: 15px;
-    top: 10px;
-    background: none;
-    height: 40px;
-    width: 40px;
-}
-.closeButton:hover {
-    background-color: #262626;
-    height: 40px;
-    width: 40px;
-    border-radius: 50px;
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    -ms-border-radius: 50px;
-    -o-border-radius: 50px;
+    top: 8px;
+    width: 30px;
+    height: 30px;
+    background: hsl(0, 0%, 62%);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
 }

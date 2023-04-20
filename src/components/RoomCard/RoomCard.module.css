@@ -1,6 +1,6 @@
 .card {
     background: var(--card-color);
-    padding: 20px 10px;
+    padding: 20px;
     border-radius: 10px;
     cursor: pointer;
 }
@@ -10,14 +10,6 @@
     align-items: center;
     position: relative;
     margin: 20px 0;
-}
-
-.singleSpeaker .avatars img{
-    position: initial;
-}
-
-.singleSpeaker .names{
-    margin-left: 60px;
 }
 
 .avatars img {
@@ -54,4 +46,12 @@
 .peopleCount span {
     font-weight: bold;
     margin-right: 5px;
+}
+
+.singleSpeaker .avatars img {
+    position: initial;
+}
+
+.singleSpeaker .names {
+    margin-left: 20px;
 }

@@ -1,24 +1,16 @@
 .navbar {
+    padding: 20px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0;
 }
-
-.brand {
-    /* display: flex; */
-    margin: 0;
-    width: 100%;
-    color: var(--text-color);
-    align-items: center;
-    font-weight: bold;
-    font-size: 22px;
+.logoText{
+    color: var(--title-color);
 }
-
-.nav_toggle_main {
+.navToggleMain {
     display: flex;
     justify-content: center;
-    width: 55px;
+    width: 45px;
     height: 45px;
     margin-right: 10px;
     background-color: var(--utils_blue-color);
@@ -29,28 +21,29 @@
     -ms-border-radius: 50px;
     -o-border-radius: 50px;
 }
-.nav_Right{
+
+.logoutButton {
+    background: none;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+.navRight {
     display: flex;
     align-items: center;
-    margin-inline: 10px;
-}
-.logout_btn{
-    background:none;
-    /* margin:0 30px; */
-    height: 50px;
-    padding: 0;
-    margin: 0;
 }
 
 .avatar {
-    
-    width: 70px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #0077ff;
-    /* margin: 0px 0px; */
-    /* padding: 5px; */
-}
-.user_name{
-    margin-right: 5px;
+    margin: 0 20px;
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
 }

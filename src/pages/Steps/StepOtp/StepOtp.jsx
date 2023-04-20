@@ -1,46 +1,49 @@
-import { useState } from 'react'
-import { Button, Card, TextInput } from '../../../components'
-import { IC_BACK_ARROW, IMG_LOCK, OTP_HEADING } from '../../../utils'
-import styles from './StepOtp.module.css'
-import { verifyOtp } from '../../../https'
-import { useSelector } from 'react-redux'
-import { setAuth } from '../../../store/authSlice'
-import { useDispatch } from 'react-redux'
+import React, { useState } from 'react';
+import Card from '../../../components/shared/Card/Card';
+import TextInput from '../../../components/shared/TextInput/TextInput';
+import Button from '../../../components/shared/Button/Button';
+import styles from './StepOtp.module.css';
+import { verifyOtp } from '../../../http';
+import { useSelector } from 'react-redux';
+import { setAuth } from '../../../store/authSlice';
+import { useDispatch } from 'react-redux';
+import { IMG_LOCK } from '../../../utils';
 
 const StepOtp = () => {
-    const [otp, setOtp] = useState('')
-    const { phone, hash } = useSelector((state) => state.auth.otp)
-    const dispatch = useDispatch()
-
-    async function onSubmit() {
-        if (!otp || !phone || !hash) return
+    const [otp, setOtp] = useState('');
+    const dispatch = useDispatch();
+    const { phone, hash } = useSelector((state) => state.auth.otp);
+    async function submit() {
+        if (!otp || !phone || !hash) return;
         try {
-            const { data } = await verifyOtp({ otp, phone, hash })
-            console.log(data)
-            dispatch(setAuth(data))
-            // onNext()
-        } catch (error) {
-            console.log(error)
+            const { data } = await verifyOtp({ otp, phone, hash });
+            dispatch(setAuth(data));
+        } catch (err) {
+            console.log(err);
         }
     }
     return (
         <>
-            <Card title={OTP_HEADING} image={IMG_LOCK}>
-                {/* <p className={`${styles.text}`}>{HOME_PARA}</p> */}
-                <div className={styles.textField}>
-                    <TextInput input_type='text' input_placeholder='' value={otp} onChange={(e) => setOtp(e.target.value)} />
-                </div>
-
-                <div>
-                    <Button label="Next" icon2={IC_BACK_ARROW} onClick={onSubmit} />
-                </div>
-                {/* <div className={`${styles.card_note}`}>
-                <p >{BOTTOM_NOTE}</p>
-
-            </div> */}
-            </Card>
+            <div className={styles.cardWrapper}>
+                <Card
+                    title="Enter the code we just texted you"
+                    icon={IMG_LOCK}
+                >
+                    <TextInput
+                        input_type='text' input_placeholder='' value={otp}
+                        onChange={(e) => setOtp(e.target.value)}
+                    />
+                    <div className={styles.actionButtonWrap}>
+                        <Button onClick={submit} text="Next" />
+                    </div>
+                    <p className={styles.bottomParagraph}>
+                        By entering your number, you’re agreeing to our Terms of
+                        Service and Privacy Policy. Thanks!
+                    </p>
+                </Card>
+            </div>
         </>
-    )
-}
+    );
+};
 
-export default StepOtp
+export default StepOtp;

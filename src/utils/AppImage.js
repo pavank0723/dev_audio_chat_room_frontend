@@ -9,6 +9,12 @@ export const IC_SEARCH = `${rootIconPath}/ic_search.svg`
 export const IC_START_ROOM = `${rootIconPath}/ic_start_room.svg`
 export const IC_USER = `${rootIconPath}/ic_user.svg`
 export const IC_CLOSE = `${rootIconPath}/ic_close.svg`
+export const IC_ARROW_FORWARD = `${rootIconPath}/ic_arrow_forward.svg`
+export const IC_ARROW_LEFT = `${rootIconPath}/ic_arrow_left.svg`
+export const IC_MUTED = `${rootIconPath}/ic_muted.svg`
+export const IC_UNMUTED = `${rootIconPath}/ic_unmuted.svg`
+export const IMG_QUITE = `${rootIconPath}/img_quite.svg`
+export const IMG_HANDS_UP = `${rootIconPath}/img_hands_ups.svg`
 
 export const LOGO = `${rootIconPath}/img_logo.svg`
 export const IMG_PHONE = `${rootIconPath}/img_phone.svg`

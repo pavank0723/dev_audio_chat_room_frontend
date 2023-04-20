@@ -1,12 +1,16 @@
-import styles from './Button.module.css'
-const Button = ({ label, icon1, icon2,onClick }) => {
+import React from 'react';
+import styles from './Button.module.css';
+import { IC_ARROW_FORWARD } from '../../../utils';
+const Button = ({ text, onClick }) => {
     return (
-        <button onClick={onClick} className={`${styles.btn_primary}`}>
-            <img className={`${styles.icon}`} src={icon1} />
-            <span>{label}</span>
-            <img className={`${styles.icon}`} src={icon2} />
+        <button onClick={onClick} className={styles.button}>
+            <span>{text}</span>
+            <img
+                className={styles.arrow}
+                src={IC_ARROW_FORWARD}
+                alt="arrow"
+            />
         </button>
-    )
-}
-
-export default Button
+    );
+};
+export default Button;

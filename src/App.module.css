@@ -1,6 +1,6 @@
-.card_wrapper{
-    display:flex;
+.cardWrapper {
+    display: flex;
     align-items: center;
-    width: 650px;
-    margin: 0 auto;
+    justify-content: center;
+    margin-top: 6rem;
 }

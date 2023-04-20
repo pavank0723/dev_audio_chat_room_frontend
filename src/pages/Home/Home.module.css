@@ -1,22 +1,29 @@
-/* .card_wrapper{
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-} */
-.text{
-    font-size: 18px;
+.text {
+    font-size: 22px;
     line-height: 1.6;
     color: var(--text-color);
+    text-align: center;
+    margin-bottom: 30px;
 }
-.signing_wrapper{
+
+.cardWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6rem;
+}
+
+.signinWrapper {
+    margin-top: 20px;
     color: var(--utils_blue-color);
-    font-weight: 400;
 }
-.has_invite{
+
+.hasInvite {
     color: var(--utils_blue-color);
     margin-left: 5px;
     font-weight: bold;
 }
-.has_invite:hover{
+
+.hasInvite :hover{
     color: hsl(212, 100%, 33%);
 }

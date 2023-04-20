@@ -1,5 +1,0 @@
-export { default as StepPhoneOrEmail } from './stepPhoneOrEmail/StepPhoneOrEmail'
-export { default as StepOtp } from './stepOtp/StepOtp'
-export { default as StepFullName } from './stepFullName/StepFullName'
-export { default as StepAvatar } from './stepAvatar/StepAvatar'
-export { default as StepUsername } from './stepUsername/StepUsername'

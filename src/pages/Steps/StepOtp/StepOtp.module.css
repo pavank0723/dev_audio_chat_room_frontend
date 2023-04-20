@@ -1,7 +1,11 @@
-.card_wrapper{
-    composes: card_wrapper from '../../../App.module.css'
+.cardWrapper {
+    composes: cardWrapper from '../../../App.module.css';
 }
 
-.textField{
-    width: 300px !important;
+.bottomParagraph {
+    composes: bottomParagraph from '../StepPhoneEmail/StepPhoneEmail.module.css';
+}
+
+.actionButtonWrap {
+    composes: actionButtonWrap from '../StepPhoneEmail/StepPhoneEmail.module.css';
 }

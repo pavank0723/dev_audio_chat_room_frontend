@@ -1,20 +1,15 @@
-.loading_message{
+.message {
     font-weight: bold;
     font-size: 22px;
 }
 
-.spinner{
-    margin-bottom: 30px;
+.spinner {
+    margin-bottom: 20px;
     animation: spin 1s ease-in-out infinite;
-    -webkit-animation: spin 1s ease-in-out infinite;
 }
 
-@keyframes spin{
-    100%{
+@keyframes spin {
+    100% {
         transform: rotate(360deg);
-        -webkit-transform: rotate(360deg);
-        -moz-transform: rotate(360deg);
-        -ms-transform: rotate(360deg);
-        -o-transform: rotate(360deg);
-}
+    }
 }

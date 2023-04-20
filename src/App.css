@@ -140,6 +140,7 @@
     --border-color3: rgba(0, 0, 0, 0.3);
     --my-image-color: linear-gradient(to right, #F9D976, #F39F86);
     --card-color: var(--grey_light-color);
+    --room-color: #fbfbfb;
 
     
 }
@@ -187,64 +188,46 @@
     --my-image-color: linear-gradient(to right, #F9D976, #F39F86);
 
     --card-color: var(--main_dark-color);
+    --room-color: #262626;
 }
 
 /* Dark */
 /* === Base === */
-
+html {
+    font-size: 16px;
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body,
-button,
-input,
-textarea {
-    font-family: 'Nunito', sans-sarif;
-    font-size: var(--normal-font-size);
-}
-
-body {
-    background-color: var(--body-color);
-    line-height: 1.6;
-    color: var(--text-color);
-}
-
 h1,
 h2,
-h3 {
-    color: var(--title-color);
-    font-weight: var(--font-semi_bold);
-    line-height: 1.2;
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+span,
+ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
     -webkit-font-smoothing: antialiased;
+    color: var(--title-color);
 }
 
+ol,
 ul {
     list-style: none;
-    -webkit-font-smoothing: antialiased;
-}
-
-a {
-    text-decoration: none;
-    -webkit-font-smoothing: antialiased;
-}
-
-button {
-    cursor: pointer;
-    border: none;
-    outline: none;
 }
 
 img {
     max-width: 100%;
     height: auto;
-    vertical-align: middle;
 }
 
 .setu_logo {
@@ -254,129 +237,28 @@ img {
     margin-right: 10px;
 }
 
-/* === Resusable CSS === */
-.section {
-    padding-top: 7rem;
-    padding-bottom: 2rem;
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-.section_title {
-    font-size: var(--h1-font-size);
-    margin-left: 0.875;
-
-    font-weight: var(--font-bold);
-    position: relative;
+body {
+    background-color: var(--body-color);
+    font-family: 'Nunito', sans-serif;
+    color: var(--text-color);
 }
 
-
-/* === Layout === */
 .container {
-    max-width: 968px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 1200px;
+    max-width: 90%;
+    margin: 0 auto;
 }
 
-.grid {
-    display: grid;
-    gap: 1.5rem;
-}
-
-.card_wrapper{
+.cardWrapper {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: calc(100vh - 140px);
-}
-
-/* === Button === */
-.btn {
-    padding: 1.25rem 2rem;
-    line-height: 1;
-    border-radius: 1.875rem;
-    -webkit-border-radius: 1.875rem;
-    -moz-border-radius: 1.875rem;
-    -ms-border-radius: 1.875rem;
-    -o-border-radius: 1.875rem;
-    color: #fff;
-    display: inline-block;
-    background-color: var(--first-color);
-    font-weight: var(--font-bold);
-}
-
-@keyframes button-push {
-    50% {
-        transform: scale(0.8);
-        -webkit-transform: scale(0.8);
-        -moz-transform: scale(0.8);
-        -ms-transform: scale(0.8);
-        -o-transform: scale(0.8);
-    }
-
-    100% {
-        transform: scale(1);
-        -webkit-transform: scale(1);
-        -moz-transform: scale(1);
-        -ms-transform: scale(1);
-        -o-transform: scale(1);
-    }
-}
-
-.btn:hover {
-    animation: button-push 0.3s linear 1;
-    -webkit-animation: button-push 0.3s linear 1;
-}
-
-.btn-flex {
-    display: inline-flex;
-}
-
-.btn_icon {
-    margin-left: var(--mb-0-5);
-}
-
-/*=============== BREAKPOINTS ===============*/
-/* For large devices */
-@media screen and (max-width: 992px) {
-    .container {
-        margin-left: var(--mb-1-5);
-        margin-right: var(--mb-1-5);
-    }
-
-    .button {
-        padding: 1rem 1.75rem;
-    }
-
-    .button__icon {
-        width: 22px;
-        height: 22px;
-    }
-}
-
-/* For medium devices */
-@media screen and (max-width: 768px) {
-    body {
-        margin: 0 0 var(--header-height) 0;
-    }
-
-    .section {
-        padding: 2rem 0 4rem;
-    }
-
-    .section__subtitle {
-        margin-bottom: var(--mb-3);
-    }
-}
-
-@media screen and (max-width: 576px) {}
-
-/* For small devices */
-@media screen and (max-width: 350px) {
-    :root {
-        --big-font-size: 2.25rem;
-    }
-
-    .container {
-        margin-left: var(--mb-1);
-        margin-right: var(--mb-1);
-    }
 }

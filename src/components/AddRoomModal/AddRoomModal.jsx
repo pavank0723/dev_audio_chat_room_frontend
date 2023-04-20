@@ -1,24 +1,22 @@
 import React, { useState } from 'react';
-import styles from './AddRoom.module.css';
-import TextInput from '../shared/text/TextInput';
-import { createRoom as create } from '../../https';
+import styles from './AddRoomModal.module.css';
+import TextInput from '../shared/TextInput/TextInput';
+import { createRoom as create } from '../../http';
+import { useHistory } from 'react-router-dom';
 import { IC_CLOSE, IMG_GO, PIC_OPEN, PIC_PRIVATE, PIC_SOCIAL } from '../../utils';
+const AddRoomModal = ({ onClose }) => {
+    const history = useHistory();
 
-import { useNavigate } from 'react-router-dom'
-
-const AddRoom = ({ onClose }) => {
-    const history = useNavigate()
     const [roomType, setRoomType] = useState('open');
     const [topic, setTopic] = useState('');
 
     async function createRoom() {
         try {
             if (!topic) return;
-            const { data } = await create({ topic, roomType })
-            history(`/room/${data.id}`)
-            // console.log(data)
-        } catch (error) {
-            console.log(error.message)
+            const { data } = await create({ topic, roomType });
+            history.push(`/room/${data.id}`);
+        } catch (err) {
+            console.log(err.message);
         }
     }
 
@@ -32,38 +30,37 @@ const AddRoom = ({ onClose }) => {
                     <h3 className={styles.heading}>
                         Enter the topic to be disscussed
                     </h3>
-                    <div className={styles.textField}>
-                        <TextInput
-                            fullwidth="true"
+                    <TextInput
+                        fullwidth="true"
                             value={topic}
                             input_placeholder="e.g. Developer issues"
-                            onChange={(e) => setTopic(e.target.value)}
-                        />
-
-                    </div>
-
+                        onChange={(e) => setTopic(e.target.value)}
+                    />
                     <h2 className={styles.subHeading}>Room types</h2>
                     <div className={styles.roomTypes}>
                         <div
                             onClick={() => setRoomType('open')}
-                            className={`${styles.typeBox} ${roomType === 'open' ? styles.active : ''
-                                }`}
+                            className={`${styles.typeBox} ${
+                                roomType === 'open' ? styles.active : ''
+                            }`}
                         >
                             <img src={PIC_OPEN} alt="globe" />
                             <span>Open</span>
                         </div>
                         <div
                             onClick={() => setRoomType('social')}
-                            className={`${styles.typeBox} ${roomType === 'social' ? styles.active : ''
-                                }`}
+                            className={`${styles.typeBox} ${
+                                roomType === 'social' ? styles.active : ''
+                            }`}
                         >
                             <img src={PIC_SOCIAL} alt="social" />
                             <span>Social</span>
                         </div>
                         <div
                             onClick={() => setRoomType('private')}
-                            className={`${styles.typeBox} ${roomType === 'private' ? styles.active : ''
-                                }`}
+                            className={`${styles.typeBox} ${
+                                roomType === 'private' ? styles.active : ''
+                            }`}
                         >
                             <img src={PIC_PRIVATE} alt="lock" />
                             <span>Private</span>
@@ -85,4 +82,4 @@ const AddRoom = ({ onClose }) => {
     );
 };
 
-export default AddRoom;
+export default AddRoomModal;

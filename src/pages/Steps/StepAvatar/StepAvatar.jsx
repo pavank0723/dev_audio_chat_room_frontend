@@ -1,61 +1,82 @@
-import { Button, Card, Loader } from '../../../components'
-import { AVATAR_HEADING, AVATAR_SUBHEADING, AVATAR_CHOOSE, IMG_DONE, PIC_AVATAR_DEF } from '../../../utils'
-import styles from './StepAvatar.module.css'
-import { useSelector } from 'react-redux'
-import { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { setAvatar } from '../../../store/activateSlice'
-import { activateUser } from '../../../https'
-import { setAuth } from '../../../store/authSlice'
+import React, { useState, useEffect } from 'react';
+import Card from '../../../components/shared/Card/Card';
+import Button from '../../../components/shared/Button/Button';
+import styles from './StepAvatar.module.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { setAvatar } from '../../../store/activateSlice';
+import { activate } from '../../../http';
+import { setAuth } from '../../../store/authSlice';
+import Loader from '../../../components/shared/Loader/Loader';
+import { IMG_DONE, PIC_AVATAR_DEF } from '../../../utils';
 
-const StepAvatar = () => {
-    const { name, avatar } = useSelector((state) => state.activate)
-    const [avatarImg, setAvatarImg] = useState(PIC_AVATAR_DEF)
-    const [loading, setLoading] = useState(false)
-    const dispatch = useDispatch()
+const StepAvatar = ({ onNext }) => {
+    const dispatch = useDispatch();
+    const { name, avatar } = useSelector((state) => state.activate);
+    const [image, setImage] = useState(PIC_AVATAR_DEF);
+    const [loading, setLoading] = useState(false);
+    const [unMounted, setUnMounted] = useState(false);
 
-    function captureAvatar(e) {
-        const uploadedImg = e.target.files[0]
-        const reader = new FileReader()
-        reader.readAsDataURL(uploadedImg)
+    function captureImage(e) {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
         reader.onloadend = function () {
-            setAvatarImg(reader.result)
-            dispatch(setAvatar(reader.result))
-        }
-        console.log(e)
+            setImage(reader.result);
+            dispatch(setAvatar(reader.result));
+        };
     }
-    async function onSubmit() {
-        if (!name || !avatar) return
-        setLoading(true)
+    async function submit() {
+        if (!name || !avatar) return;
+        setLoading(true);
         try {
-            const { data } = await activateUser({ name, avatar })
+            const { data } = await activate({ name, avatar });
             if (data.auth) {
-                dispatch(setAuth(data))
+                if (!unMounted) {
+                    dispatch(setAuth(data));
+                }
             }
-            console.log(data)
-        } catch (error) {
-            console.log(error)
-        }
-        finally {
-            setLoading(false)
+        } catch (err) {
+            console.log(err);
+        } finally {
+            setLoading(false);
         }
     }
-    if (loading) return <Loader message='Activation in progress...' />
+
+    useEffect(() => {
+        return () => {
+            setUnMounted(true);
+        };
+    }, []);
+
+    if (loading) return <Loader message="Activation in progress..." />;
     return (
         <>
-            <Card title={`${AVATAR_HEADING} ${name}`} image={IMG_DONE}>
-                <p className={styles.subHeading}>{AVATAR_SUBHEADING}</p>
-                <div className={styles.avaterWrapper}>
-                    <img className={styles.avatarImg} src={avatarImg} alt="avatar_img" />
+            <Card title={`Okay, ${name}`} icon={IMG_DONE}>
+                <p className={styles.subHeading}>How’s this photo?</p>
+                <div className={styles.avatarWrapper}>
+                    <img
+                        className={styles.avatarImage}
+                        src={image}
+                        alt="avatar"
+                    />
                 </div>
                 <div>
-                    <input id='avatarInput' type='file' className={styles.avatarInput} onChange={captureAvatar} />
-                    <label htmlFor='avatarInput' className={styles.avatarLabel}>{AVATAR_CHOOSE}</label>
+                    <input
+                        onChange={captureImage}
+                        id="avatarInput"
+                        type="file"
+                        className={styles.avatarInput}
+                    />
+                    <label className={styles.avatarLabel} htmlFor="avatarInput">
+                        Choose a different photo
+                    </label>
                 </div>
-                <Button onClick={onSubmit} label="Next" />
+                <div>
+                    <Button onClick={submit} text="Next" />
+                </div>
             </Card>
         </>
-    )
-}
+    );
+};
 
-export default StepAvatar
+export default StepAvatar;
